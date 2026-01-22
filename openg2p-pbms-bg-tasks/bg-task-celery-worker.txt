@@ -3,4 +3,4 @@
 #!openg2p-pbms-bg-tasks/Dockerfile.workers
 #!.
 # adapters/dependencies (adjust refs/branches/tags as needed)
-git+https://github.com/openg2p/openg2p-pbms-gen2-bg-tasks-extensions@v3.0.0#subdirectory=openg2p-bg-task-registry-adapters
+git+https://github.com/openg2p/openg2p-pbms-bg-tasks-extensions@v3.0.0#subdirectory=openg2p-bg-task-registry-adapters

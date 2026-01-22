@@ -1,2 +1,2 @@
-# openg2p-pbms-gen2-packaging
-Packaging Repo - to create docker for PBMS
+# openg2p-pbms-packaging
+Packaging Repo - to create docker for PBMS Odoo and Background Tasks

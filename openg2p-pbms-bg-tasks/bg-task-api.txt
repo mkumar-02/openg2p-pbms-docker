@@ -1,5 +1,0 @@
-# bg-task-api.txt
-#!openg2p/openg2p-pbms-bg-task-api:3.0.0
-#!openg2p-pbms-bg-tasks/Dockerfile.api
-#!.
-git+https://github.com/openg2p/openg2p-pbms-gen2-bg-tasks-extensions@v3.0.0#subdirectory=openg2p-bg-task-registry-adapters
