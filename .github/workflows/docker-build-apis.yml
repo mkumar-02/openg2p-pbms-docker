@@ -11,6 +11,8 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    env:
+      OPENG2P_BOT_GITHUB_PAT: ${{ secrets.OPENG2P_BOT_GITHUB_PAT }}
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -164,6 +166,8 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: ${{ steps.read.outputs.image }}
+          build-args: |
+            OPENG2P_BOT_GITHUB_PAT=${{ secrets.OPENG2P_BOT_GITHUB_PAT }}
           labels: |
             org.opencontainers.image.created=${{ steps.read.outputs.created }}
             org.opencontainers.image.authors=${{ github.repository_owner }}
