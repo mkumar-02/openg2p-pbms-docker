@@ -1,5 +1,5 @@
 # bg-task-celery-worker.txt
-#!mkumar02/openg2p-pbms-bg-task-celery-workers:dr-hh
+#!mkumar02/openg2p-pbms-bg-task-celery-workers:dr-hh-2
 #!openg2p-pbms-bg-tasks/bg-task-celery-worker/Dockerfile
 #!.
 # adapters/dependencies (adjust refs/branches/tags as needed)
