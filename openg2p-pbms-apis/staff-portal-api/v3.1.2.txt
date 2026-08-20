@@ -1,0 +1,5 @@
+# staff-portal-api.txt
+#!mkumar02/openg2p-pbms-staff-portal-api:3.1.2
+#!openg2p-pbms-apis/staff-portal-api/Dockerfile
+#!.
+git+https://github.com/mkumar-02/openg2p-pbms-bg-tasks-extensions@3.1#subdirectory=openg2p-bg-task-registry-adapters

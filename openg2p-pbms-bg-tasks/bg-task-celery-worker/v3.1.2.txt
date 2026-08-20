@@ -1,0 +1,6 @@
+# bg-task-celery-worker.txt
+#!mkumar02/openg2p-pbms-bg-task-celery-workers:3.1.2
+#!openg2p-pbms-bg-tasks/bg-task-celery-worker/Dockerfile
+#!.
+# adapters/dependencies (adjust refs/branches/tags as needed)
+git+https://github.com/mkumar-02/openg2p-pbms-bg-tasks-extensions@3.1#subdirectory=openg2p-bg-task-registry-adapters
