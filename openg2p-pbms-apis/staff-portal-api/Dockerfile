@@ -12,10 +12,10 @@ COPY adapters.requirements.txt /tmp/adapters.requirements.txt
 RUN if [ -s /tmp/adapters.requirements.txt ]; then pip install --no-cache-dir -r /tmp/adapters.requirements.txt --verbose; fi
 
 # Core libs (as in your current API Dockerfile)
-RUN pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-common  \
+RUN pip install --no-cache-dir greenlet jinja2 \
+ && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-common  \
  && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-auth \
- && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-auth-models \
- && pip install --no-cache-dir jinja2
+ && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-auth-models
 
 
 # Always from openg2p-g2p-bridge repo (no local installs)

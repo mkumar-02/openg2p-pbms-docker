@@ -14,7 +14,7 @@ RUN if [ -s /tmp/adapters.requirements.txt ]; then pip install --no-cache-dir -r
 # Install all Python packages in one layer for better caching and speed
 # Use --parallel-builds for faster git cloning and building
 RUN pip install --upgrade pip setuptools && \
-    pip install jinja2 && \
+    pip install jinja2 greenlet && \
     pip install --disable-pip-version-check \
         git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.5\#subdirectory=openg2p-fastapi-common \
         git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.5\#subdirectory=openg2p-fastapi-auth \
