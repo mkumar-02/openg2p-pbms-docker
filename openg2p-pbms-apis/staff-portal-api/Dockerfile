@@ -11,8 +11,11 @@ WORKDIR /app
 COPY adapters.requirements.txt /tmp/adapters.requirements.txt
 RUN if [ -s /tmp/adapters.requirements.txt ]; then pip install --no-cache-dir -r /tmp/adapters.requirements.txt --verbose; fi
 
-# Core libs (as in your current API Dockerfile)
-RUN pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-common  \
+# Core libs. Pin SQLAlchemy to 2.0.x (same as previous working images):
+# 2.0 pulls greenlet automatically; 2.1 does not, and also defaults
+# postgresql:// to psycopg3.
+RUN pip install --no-cache-dir "sqlalchemy>=2.0.20,<2.1" \
+ && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-common  \
  && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-auth \
  && pip install --no-cache-dir git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.6\#subdirectory=openg2p-fastapi-auth-models \
  && pip install --no-cache-dir jinja2

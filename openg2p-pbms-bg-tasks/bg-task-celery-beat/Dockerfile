@@ -13,7 +13,10 @@ RUN if [ -s /tmp/adapters.requirements.txt ]; then pip install --no-cache-dir -r
 
 # Install all Python packages in one layer for better caching and speed
 # Use --parallel-builds for faster git cloning and building
+# Pin SQLAlchemy to 2.0.x so greenlet is installed automatically (as in
+# previous images) and postgresql:// keeps using psycopg2.
 RUN pip install --upgrade pip setuptools && \
+    pip install "sqlalchemy>=2.0.20,<2.1" && \
     pip install --disable-pip-version-check \
         git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.5\#subdirectory=openg2p-fastapi-common  \
         git+https://github.com/openg2p/openg2p-fastapi-common@v1.1.5\#subdirectory=openg2p-fastapi-auth \
